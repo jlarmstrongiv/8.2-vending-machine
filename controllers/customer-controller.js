@@ -6,6 +6,9 @@ const My = require('../models/my-collection');
 // let path = staticPath + 'pageOne';
 // res.send(path);
 module.exports = {
+  sanity: (req, res) => {
+    res.sendStatus(200);
+  }
   // pageOne: (req, res) => {
     // req.app.locals.layout = 'layout'; //try defining globally like staticPath
   //   res.send('pageOne');

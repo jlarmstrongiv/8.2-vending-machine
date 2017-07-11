@@ -1,10 +1,12 @@
 const express = require('express')
   , routerHelpers = require('./router-helpers')
-  , myController = require('../controllers/my-controller');
+  , apiController = require('../controllers/customer-controller');
 // REF Projects 6-Gabber-Twitter
 
 module.exports = function (app) {
-  const myControllerRouter = express.Router();
+  const apiControllerRouter = express.Router();
+
+  apiControllerRouter.get('/sanity', apiController.sanity);
 
   // myControllerRouter.get('/pageOne', myController.pageOne);
   // myControllerRouter.get('/pageTwo', myController.pageTwo);
@@ -12,6 +14,6 @@ module.exports = function (app) {
 
   // myControllerRouter.get('/:page', routerHelpers.debugMiddleware, myController.detail);
 
-  app.use('/', myControllerRouter);
+  app.use('/api/customer', apiControllerRouter);
   // app.use('/pages', myControllerRouter); // set url prefix
 };

@@ -13,7 +13,8 @@ mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/mongoosevinyl');
 
 // My Routers and Models
-const myRouter = require('./routers/my-router')
+const vendorRouter = require('./routers/vendor-router')
+  , customerRouter = require('./routers/customer-router')
   , My = require('./models/my-collection');
 
 const app = express();
@@ -22,9 +23,6 @@ app.use('/static', express.static(path.join(__dirname, 'static')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(expressValidator({
-  additionalValidators: 'equals'
-}));
 
 // app.engine('mustache', mustacheExpress());
 // app.set('views', './views');
@@ -35,7 +33,8 @@ app.use(function(req, res, next){
   next();
 });
 
-myRouter(app);
+vendorRouter(app);
+customerRouter(app);
 
 app.listen(3000, function () {
   console.log('Express is listening for connections');
