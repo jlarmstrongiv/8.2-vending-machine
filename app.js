@@ -4,18 +4,17 @@ const express = require('express')
   // , fs = require('fs') // access File System
   , bodyParser = require('body-parser')
   , mongoose = require('mongoose');
-
-  const nodeEnv = process.env.NODE_ENV || 'development'
-    , config = require('./mongo-config.json')[nodeEnv];
-
-// REF https://github.com/tiy-greenville-summer-2017/7.2.1-Mongoose/blob/master/app.js
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost:27017/mongoosevinyl');
 
 // My Routers and Models
 const vendorRouter = require('./routers/vendor-router')
   , customerRouter = require('./routers/customer-router')
-  , My = require('./models/my-collection');
+  , VendorMoney = require('./models/vendor-money-collection');
+
+const nodeEnv = process.env.NODE_ENV || 'development'
+  , config = require('./mongo-config.json')[nodeEnv];
+
+mongoose.connect(config.mongoURL);
 
 const app = express();
 

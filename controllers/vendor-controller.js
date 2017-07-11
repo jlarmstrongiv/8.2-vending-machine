@@ -1,4 +1,4 @@
-const My = require('../models/my-collection');
+const VendorMoney = require('../models/vendor-money-collection');
 // REF Projects 6-Gabber-Twitter
 
 // prepend path variable for view folder hierachy

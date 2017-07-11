@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 // REF Activities 7.4-collections-mongoose
 
-const mySchema = new mongoose.Schema({
-
+const vendorMoneySchema = new mongoose.Schema({
+  vendorMoney: Number
 });
 
-const My = mongoose.model('My', mySchema);
+const VendorMoney = mongoose.model('VendorMoney', vendorMoneySchema);
 
-module.exports = My;
+module.exports = VendorMoney;
 // const vinylSchema = new mongoose.Schema({
 //   artist: [{ type: String}],
 //   album: String,

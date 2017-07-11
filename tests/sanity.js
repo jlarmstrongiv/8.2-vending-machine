@@ -2,7 +2,6 @@ const chai = require('chai');
 const expect = require('chai').expect;
 const request = require('supertest');
 const app = require('../app');
-const My = require('../models/my-collection');
 
 describe('sanity test', () => {
   // REF 8.2-joels-v2-advanced-testing
@@ -10,13 +9,13 @@ describe('sanity test', () => {
     expect(1).to.not.equal(2);
   });
 
-  it("can access api endpoint and get success back", (done) => {
+  it("can access vendor api endpoint and get success back", (done) => {
     request(app)
       .get("/api/vendor/sanity")
-      .expect(200, done); 
+      .expect(200, done);
   });
 
-  it("can access api endpoint and get success back", (done) => {
+  it("can access customer api endpoint and get success back", (done) => {
     request(app)
       .get("/api/customer/sanity")
       .expect(200, done);
