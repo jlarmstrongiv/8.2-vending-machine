@@ -1,0 +1,42 @@
+{
+  "name": "8.2-vending-machine",
+  "version": "0.0.1",
+  "description": "Vending Machine API",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test mocha tests"
+  },
+  "jshintConfig": {
+    "esversion": 6,
+    "laxcomma": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlarmstrongiv/8.2-vending-machine.git"
+  },
+  "keywords": [
+    "Iron",
+    "Yard",
+    "Node",
+    "Express",
+    "Mongo",
+    "Mongoose",
+    "Mocha",
+    "SuperTester"
+  ],
+  "author": "John Armstrong",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/jlarmstrongiv/8.2-vending-machine/issues"
+  },
+  "homepage": "https://github.com/jlarmstrongiv/8.2-vending-machine#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.8"
+  }
+}
